@@ -82,12 +82,26 @@ def obter_planilha():
     return planilha.sheet1
 
 @st.cache_data(ttl=60, show_spinner=False)
+@st.cache_data(ttl=60, show_spinner=False)
 def carregar_dados():
     """Carrega os dados da planilha e trata tipos de dados com Pandas."""
     ws = obter_planilha()
     registros = ws.get_all_records()
     
     if not registros:
-        # Se a planilha estiver totalmente em branco, inicializa os cabeçalhos
         valores = ws.get_all_values()
         if not valores:
+            ws.append_row(COLUNAS_PLANILHA)
+        return pd.DataFrame(columns=COLUNAS_PLANILHA)
+    
+    df = pd.DataFrame(registros)
+    
+    for col in COLUNAS_PLANILHA:
+        if col not in df.columns:
+            df[col] = None
+    df = df[COLUNAS_PLANILHA]
+    
+    df["Valor (R$)"] = df["Valor (R$)"].apply(converter_para_float)
+    df["Data"] = pd.to_datetime(df["Data"], format="%d/%m/%Y", errors="coerce")
+    
+    return df
