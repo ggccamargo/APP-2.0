@@ -16,7 +16,7 @@ st.set_page_config(
 )
 
 # Constantes globais
-SHEET_URL = "https://docs.google.com/spreadsheets/d/1MxAYCiQEOUz7exr-ZHh2v2khgMdZQoFy9dFQZwo6roU/edit"
+SHEET_URL = "https://docs.google.com/spreadsheets/d/1LEgZ6JxbhbQ6JpHYlPf5PmO7fzEhiQQF6Au2dbzeG80/edit?usp=drive_link"
 COLUNAS_PLANILHA = ["Data", "Descrição", "Categoria", "Valor (R$)"]
 CATEGORIAS = ["Casa", "Crianças", "Alimentação", "Carro", "Compras", "Viagens"]
 NOMES_MESES = {
