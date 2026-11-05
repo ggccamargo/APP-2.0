@@ -21,7 +21,7 @@ SHEET_TAB_NAME = "Página1"
 SERVICE_ACCOUNT_EMAIL = "app2-606@app2-513815.iam.gserviceaccount.com"
 
 COLUNAS_PLANILHA = ["Data", "Descrição", "Categoria", "Valor (R$)"]
-CATEGORIAS = ["Casa", "Crianças", "Alimentação", "Carro", "Compras", "Viagens"]
+CATEGORIAS = ["Casa", "Crianças", "Alimentação", "Carro", "Compras", "Viagens", "Saúde"]
 NOMES_MESES = {
     1: "Janeiro", 2: "Fevereiro", 3: "Março", 4: "Abril",
     5: "Maio", 6: "Junho", 7: "Julho", 8: "Agosto",
